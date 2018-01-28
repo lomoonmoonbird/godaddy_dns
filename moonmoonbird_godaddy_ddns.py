@@ -89,6 +89,7 @@ def main():
        
     #get public ip from wan
     if not args.ip:
+        # while True:
         try:
             with urlopen("http://api.ipify.org") as f: resp=f.read()
             if sys.version_info > (3,): resp = resp.decode('utf-8')
@@ -97,6 +98,10 @@ def main():
         except URLError:
             msg = 'Unable to automatically obtain IP address from http://api.ipify.org.'
             raise Exception(msg)
+            # with open('./ip.txt', 'wr') as ipf:
+            #     for ip in ipf:
+            #         if args.ip == ip:
+                        
             
     ip = args.ip
     ip_split =ip.split('.')
