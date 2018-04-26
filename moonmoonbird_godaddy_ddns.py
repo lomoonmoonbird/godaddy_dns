@@ -154,7 +154,8 @@ def main():
     try:
         with urlopen(req) as f: resp = f.read()
         if sys.version_info > (3,):  resp = resp.decode('utf-8')
-        resp = json.loads(resp)
+        if resp:
+            resp = json.loads(resp)
     except HTTPError as e:
         if e.code==400:
             msg = 'Unable to set IP address: GoDaddy API URL ({}) was malformed.'.format(req.full_url)
