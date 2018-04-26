@@ -1,0 +1,1 @@
+exec /home/installation/python363/bin/python3.6 /home/jinpeng/cron/moonmoonbird-godaddy-ddns/guanling_godaddy_ddns.py %/home/jinpeng/cron/moonmoonbird-godaddy-ddns/config_guanling_api.txt
